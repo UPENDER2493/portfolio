@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #add8e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-container {
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #ff4684;;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00bfff;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.otp-input {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.success-container {
+  text-align: center;
+}
+
+.success-container h2 {
+  color: #ff4684;
+}
+
+.success-container p {
+  font-size: 18px;
+  color: #333;
+}
+
+.otp-verification-container {
+  margin-top: 30px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <div class="signup-form">
+      <h2>Create Your Account</h2>
+      <form id="signupForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+        <button type="button" id="signupBtn">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- OTP Verification -->
+    <div class="otp-verification-container" id="otpVerificationContainer" style="display: none;">
+      <h2>Enter OTP</h2>
+      <p>We sent a 6-digit OTP to your email. Please enter it below.</p>
+      
+      <form id="otpForm">
+        <input type="text" id="otp1" maxlength="1" class="otp-input" required>
+        <input type="text" id="otp2" maxlength="1" class="otp-input" required>
+        <input type="text" id="otp3" maxlength="1" class="otp-input" required>
+        <input type="text" id="otp4" maxlength="1" class="otp-input" required>
+        <input type="text" id="otp5" maxlength="1" class="otp-input" required>
+        <input type="text" id="otp6" maxlength="1" class="otp-input" required>
+        <br>
+        <button type="button" id="verifyBtn">Verify OTP</button>
+      </form>
+
+      <p id="otpErrorMessage" class="error-message"></p>
+    </div>
+
+    <!-- Registration Success -->
+    <div class="success-container" id="successContainer" style="display: none;">
+      <h2>Registration Successful!</h2>
+      <p>Congratulations, you have successfully registered. You can now log in.</p>
+    </div>
+  </div>
+
+  <script>
+    // Simulate sending an OTP for email verification
+const generatedOtp = "123456";  // In a real scenario, this should be generated server-side.
+
+document.getElementById("signupBtn").addEventListener("click", function() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  // Validate user input
+  if (!name || !email || !password || !confirmPassword) {
+    alert("Please fill all the fields.");
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match.");
+    return;
+  }
+
+  // Show OTP verification section
+  document.querySelector(".signup-form").style.display = "none";
+  document.getElementById("otpVerificationContainer").style.display = "block";
+  alert(`OTP sent to ${email}`);
+});
+
+// OTP Verification
+document.getElementById("verifyBtn").addEventListener("click", function() {
+  let otp = '';
+  for (let i = 1; i <= 6; i++) {
+    otp += document.getElementById(`otp${i}`).value;
+  }
+
+  if (otp === generatedOtp) {
+    // OTP is correct, show success message
+    document.getElementById("otpVerificationContainer").style.display = "none";
+    document.getElementById("successContainer").style.display = "block";
+  } else {
+    document.getElementById("otpErrorMessage").innerText = "Invalid OTP, please try again.";
+  }
+});
+
+// Automatically move focus to the next OTP input
+document.querySelectorAll('.otp-input').forEach((input, index) => {
+  input.addEventListener('input', function() {
+    if (this.value.length === 1 && index < 5) {
+      document.getElementById(`otp${index + 2}`).focus();
+    }
+  });
+});
+
+  </script>
+</body>
+</html>

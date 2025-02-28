@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+        }
+        .container{
+            border: 2px solid black;
+            box-shadow: 0px 10px 5px rgb(0, 187, 255);
+            padding: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Qr code Generater</h1>
+        <input type="text" placeholder="enter a url" class="input-qr">
+        <button class="gr-btn">generate</button>
+        <img src="" alt="" class="qr-img">
+    </div>
+<script>
+    const input=document.querySelector('.input-qr')
+    const button=document.querySelector('.gr-btn')
+    const image=document.querySelector('.qr-img')
+    button.addEventListener('click',()=>{
+        const URL=input.value
+        if(!URL){
+            alert("enter a valid url")
+            return;
+        }
+        image.src=`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${URL}` 
+    })
+</script>
+</body>
+</html>

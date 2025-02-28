@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>World College of Technology and Management</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 50px 0;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.navbar .logo h2 {
+    color: white;
+    float: left;
+    margin-left: 20px;
+}
+
+.navbar .nav-links {
+    float: right;
+    margin-right: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar .nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    padding: 10px;
+    width: 260px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Section Styles */
+.section {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h2>World College of Technology and Management</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./availablecourses.html">Services</a></li>
+            <li><a href="./registration.html">Sign Up</a></li>
+            <li><a href="./login.html">Sign In</a></li>
+            <li><a href="./about.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <header>
+        <h1>Welcome to World College of Technology and Management</h1>
+        <p>Shaping future leaders and innovators.</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>World College of Technology and Management is a leading institution committed to providing world-class education in technology and management.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <ul>
+            <li>High-quality academic programs</li>
+            <li>Industry-aligned curriculum</li>
+            <li>Campus placements</li>
+            <li>Research and development opportunities</li>
+        </ul>
+    </section>
+
+    <!-- Sign Up Section -->
+    <section id="signup" class="section">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <input type="text" id="name" placeholder="Full Name" required><br>
+            <input type="email" id="email" placeholder="Email Address" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+
+    <!-- Sign In Section -->
+    <section id="signin" class="section">
+        <h2>Sign In</h2>
+        <form id="signin-form">
+            <input type="email" id="signin-email" placeholder="Email Address" required><br>
+            <input type="password" id="signin-password" placeholder="Password" required><br>
+            <button type="submit">Sign In</button>
+        </form>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>If you have any queries, feel free to reach out to us at:</p>
+        <p>Email: info@wctm.edu</p>
+        <p>Phone: +1234567890</p>
+    </section>
+
+    <script>
+        // Simple JavaScript for form handling (Just a basic example for form submission)
+document.getElementById('signup-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    alert('Sign up successful!');
+});
+
+document.getElementById('signin-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    alert('Sign in successful!');
+});
+
+    </script>
+</body>
+</html>

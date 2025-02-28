@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        h3{
+    text-align: center;
+    font-weight: 600;
+    font-weight: bolder;
+    color: rgb(255, 70, 132);
+    text-decoration: underline;
+    background-color: #add8e6;
+}
+p{
+    text-align: justify;
+    padding: 0px 60px;
+}
+.about-section{
+    margin: 65px;
+    width: fit-content;
+    height: fit-content;
+}
+.Banner{
+    width: 2000px;
+    margin-right: 65px;
+    margin-left: auto;
+    display: flex;
+}
+.contact-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+    margin: 10px auto;
+    background-color: #add8e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px black;
+}
+.contact-info,.contact-form{
+    flex: 1;
+    min-width: 300px;
+    margin: 15px;
+}
+h2{
+    color: #ff4684;
+}
+p,a{
+    font-size: 15px;
+    
+    color: black;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+label{
+    font-weight: bold;
+    margin-top: 10px;
+}
+input,textarea{
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    font-size: 20px;
+}
+button{
+    background-color:rgb(255, 255, 255);
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+button:hover{
+    background-color: rgb(255, 70, 132);
+}
+    </style>
+</head>
+
+<body>
+    <div class="about-section">
+        <h3>Our Mission</h3>
+        <p>
+            The mission of Bachelor of Technology (B.Tech) courses is to foster innovation, technical expertise, and holistic development in students. These programs are designed to create proficient engineers capable of addressing real-world challenges through a blend of theoretical knowledge and hands-on experience. Core objectives include equipping students with foundational and advanced engineering principles, enhancing problem-solving and critical thinking abilities, and fostering interdisciplinary collaboration. B.Tech courses aim to inculcate ethical practices, professional responsibility, and a commitment to lifelong learning. By integrating modern technologies and industry-relevant skills, these programs strive to produce graduates who can excel in diverse technological landscapes and contribute positively to society. Ultimately, the mission is to mold future leaders who are well-prepared to drive technological advancements, support sustainable development, and contribute to the global engineering community.
+        </p>
+        <h3>Our Vision</h3>
+        <p>
+            The vision of Bachelor of Technology (B.Tech) courses is to create a dynamic educational environment that nurtures innovative thinkers and skilled professionals. These courses aim to produce graduates who are not only technically proficient but also socially responsible, capable of driving technological advancements, and dedicated to sustainable development, contributing positively to the global engineering landscape.
+        </p>
+
+        <h3>What B.TECH Do</h3>
+        <p>
+            A Bachelor of Technology (B.Tech) degree equips students with essential engineering knowledge and practical skills required for various technical fields. Graduates learn to apply mathematical and scientific principles to solve engineering problems, develop innovative solutions, and contribute to technological advancements. They gain expertise in areas such as software development, electronics, mechanical systems, and civil infrastructure. B.Tech professionals are trained to work effectively in interdisciplinary teams, manage projects, and uphold ethical standards. They often pursue careers in industries like IT, manufacturing, telecommunications, and construction, or continue their education with specialized graduate studies or research.
+        </p>
+    </div>
+    <div class="Banner">
+        <img src="https://png.pngtree.com/thumb_back/fh260/back_our/20190623/ourmid/pngtree-color-technology-sense-internet-data-background-image_238955.jpg"
+            height="300px" width="1380px" radius="10px"/>
+    </div>
+    <main class="contact-container">
+        <div class="contact-info">
+            <p>📩 <a href="mailto:info@bachelorsoftechnologies.com">info@bachelorsoftechnologies.com</a></p> 
+            <h2>Our Contact Details</h2>
+            <p>📍 <a href="google maps:https://maps.app.goo.gl/CLtPtTnozDnEJJwY8">World Coleege Of Technology And Management, Farukhnagar, Gurgaon, Haryana, 122001</a></p>
+            <p>📞<a href="tel:+919911169001">+91 ********36</a></p>
+            <p>📞<a href="tel:+919911169001">+91 ********26</a></p>
+            <p>📩 <a href="mailto:info@bachelorsoftechnologies.com">info@bachelorsoftechnologies.com</a></p>
+            <h2>Contact Hours</h2>
+            <p>Mon - Fri<br>11:00 am – 5:00 pm
+                <br>
+                Holiday Closed
+            </p>
+        </div>
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form onsubmit="return sum()">
+                <label for="name">Name:</label>
+                <input type="text" placeholder="Enter your Name" required>
+                <label for="name">Email:</label>
+                <input type="email" placeholder="Enter your Email" required>
+                <label for="message">Message</label>
+                <textarea id="meassage" name="message" required></textarea>
+                <button type="submit">send message</button>
+            </form>
+
+        </div>
+        <script>
+            function sum() {
+                alert("are you want to submit that form")
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .course {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .course-content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+        }
+        .course-content img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .course-content h2 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .course-content p {
+            display: none; 
+            font-size: 14px;
+            color: #333;
+            margin: 10px 0;
+        }
+        .course-content button {
+            background-color: rgba(0, 89, 255, 0.833);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .course-content button:hover {
+            background-color: #ff0088d3;
+        }
+        a{
+    text-decoration: none;
+    color: black;
+}
+        a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <h1>Available Courses</h1>
+    <div class="course">
+        <div class="course-content">
+            <img src="d:\img\web development.jpg" alt="WEB DEVELOPMENT">
+            <h2>Web Development</h2>
+            <p>Learn HTML, CSS, JavaScript, and modern frameworks.</p>
+            <button onclick="toggle(this)">Show Detail</button>
+        </div>
+        <div class="course-content">
+            <img src="d:\img\data analytic.jpg" alt="Data Analytics">
+            <h2>Data Analytics</h2>
+            <p>Master data visualization, SQL, and Python for analytics.</p>
+            <button onclick="toggle(this)">Show Detail</button>
+        </div>
+        <div class="course-content">
+            <img src="d:\img\data science.jfif" alt="Data Science">
+            <h2>Data Science</h2>
+            <p>Deep dive into AI, machine learning, and big data.</p>
+            <button onclick="toggle(this)">Show Detail</button>
+        </div>
+        <div class="course-content">
+            <img src="d:\img\digital marketing.jpg" alt="Digital Marketing">
+            <h2>Digital Marketing</h2>
+            <p>SEO, social media, and online advertising strategies.</p>
+            <button onclick="toggle(this)">Show Detail</button>
+        </div>
+        <div class="course-content">
+            <img src="d:\img\machine learning.jpg" alt="Machine Learning">
+            <h2>Machine Learning</h2>
+            <p>Build AI models with Python, TensorFlow, and Scikit-learn.</p>
+            <button onclick="toggle(this)">Show Detail</button>
+        </div>
+        <div class="course-content">
+            <img src="d:\img\power bi.jpg" alt="Power BI">
+            <h2>Power BI</h2>
+            <p>Data visualization and business intelligence techniques.</p>
+            <button onclick="toggle(this)">Show Detail</button>
+        </div>
+        <div class="course-content">
+            <img src="d:\img\graphics designing.jfif" alt="GRAPHICS DESIGNING">
+            <h2>Graphics Designing</h2>
+            <p>Unleash creativity with graphic design tools and techniques.</p>
+            <button onclick="toggle(this)">Show Detail</button>
+        </div>
+        <div class="course-content">
+            <img src="d:\img\computer science.jfif" alt="COMPUTER SCIENCE">
+            <h2>Computer Science</h2>
+            <p>Unlocking future technologies with computer science principles and practices.</p>
+            <button onclick="toggle(this)">Show Detail</button>
+        </div>
+    </div>
+
+    <script>
+        function toggle(button) {
+            let description = button.previousElementSibling; 
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+                button.textContent = "Hide Detail";
+            } 
+            else{
+                description.style.display = "none";
+                button.textContent = "Show Detail";
+            }
+        }
+    </script>
+</body>
+</html>
